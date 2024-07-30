@@ -29,3 +29,5 @@ def delete_page(page_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+main = app 
