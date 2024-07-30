@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Pages</h2>
+            <ul id="page-list">
+                {% for page in pages %}
+                <li data-id="{{ page.id }}">{{ page.title }}</li>
+                {% endfor %}
+            </ul>
+            <button id="new-page-btn">New Page</button>
+        </div>
+        <div class="content">
+            <input type="text" id="page-title" placeholder="Page Title">
+            <textarea id="page-content" placeholder="Page Content"></textarea>
+            <button id="save-btn">Save</button>
+            <button id="delete-btn">Delete</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
